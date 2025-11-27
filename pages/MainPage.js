@@ -17,6 +17,19 @@ exports.MainPage = class MainPage {
         this.createWebsiteBtnCTA = page
             .getByRole('button', { name: 'Create Your Website' })
             .nth(1);
+
+        // Header elements
+        this.soloLogo = page.locator('a[href="https://main.soloist.ai/"]').first();
+        this.mozillaLogo = page.locator('a[href*="mozilla.org"]').first();
+        this.pricingLink = page.getByRole('button', { name: 'Pricing' }).first();
+        this.supportLink = page.getByRole('button', { name: 'Support' }).first();
+        this.toolsDropdown = page.getByRole('button', { name: 'Tools' }).first();
+        this.signInButton = page.getByRole('button', { name: 'Sign In' }).first();
+
+        // Tools dropdown items
+        this.businessNameCreator = page.getByRole('link', { name: 'Business Name Creator' }).first();
+        this.businessIdeaCreator = page.getByRole('link', { name: 'Business Idea Creator' }).first();
+        this.googleAdCreator = page.getByRole('link', { name: 'Google Ad Creator' }).first();
     }
 
     async goto() {
@@ -24,10 +37,23 @@ exports.MainPage = class MainPage {
     }
 
     async startCreationHero() {
-        await this.createWebsiteBtnHero.click();
+        await this.createWebsiteBtnHero.click({ force: true });
     }
 
     async startCreationCTA() {
-        await this.createWebsiteBtnCTA.click();
+        await this.createWebsiteBtnCTA.click({ force: true });
+    }
+
+    // Helper methods with force click to bypass Google credential picker overlay
+    async clickToolsDropdown() {
+        await this.toolsDropdown.click({ force: true });
+    }
+
+    async clickPricingLink() {
+        await this.pricingLink.click({ force: true });
+    }
+
+    async clickSupportLink() {
+        await this.supportLink.click({ force: true });
     }
 };
