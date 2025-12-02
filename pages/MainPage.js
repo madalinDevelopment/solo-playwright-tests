@@ -56,4 +56,8 @@ exports.MainPage = class MainPage {
     async clickSupportLink() {
         await this.supportLink.click({ force: true });
     }
+
+    async clickSignInButton() {
+        await this.signInButton.click({ force: true });
+    }
 };
