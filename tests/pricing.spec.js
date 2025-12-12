@@ -77,7 +77,7 @@ test.describe('Pricing Page UI Elements', () => {
             await expect(pricingPage.freePlanButton).toHaveText('Create a Website');
         });
 
-        test('should display "1 published website" feature', async () => {
+        test('should display "3 published websites" feature', async () => {
             await expect(pricingPage.freePlanFeature1).toBeVisible();
         });
 
@@ -89,7 +89,7 @@ test.describe('Pricing Page UI Elements', () => {
             await expect(pricingPage.freePlanFeature3).toBeVisible();
         });
 
-        test('should display "Up to 10 uploaded images per site" feature', async () => {
+        test('should display "Up to 25 uploaded images per site" feature', async () => {
             await expect(pricingPage.freePlanFeature4).toBeVisible();
         });
 

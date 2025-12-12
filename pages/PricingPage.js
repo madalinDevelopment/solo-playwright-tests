@@ -37,10 +37,10 @@ exports.PricingPage = class PricingPage {
         this.freePlanButton = page.getByRole('button', { name: 'Create a Website' });
 
         // Free Plan Features
-        this.freePlanFeature1 = page.getByText('1 published website');
+        this.freePlanFeature1 = page.getByText('3 published websites');
         this.freePlanFeature2 = page.getByText('3 draft websites');
         this.freePlanFeature3 = page.getByText('Connect 1 custom domain');
-        this.freePlanFeature4 = page.getByText('Up to 10 uploaded images per site');
+        this.freePlanFeature4 = page.getByText('Up to 25 uploaded images per site');
         this.freePlanFeature5 = page.getByText('Invite 1 editor per site');
 
         // ========== PRO PLAN COLUMN ==========
